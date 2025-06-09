@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Arbutus&display=swap');
+
+:root {
+	--p-background: #F4E9CD;
+	--p-text: black;
+	--p-primary: #495F41;
+	--p-primary-dark: color-mix(in srgb, var(--p-primary) 90%, black);
+	--p-primary-darker: color-mix(in srgb, var(--p-primary) 85%, black);
+	--p-on-primary: white;
+	--p-secondary: #9E6240;
+	--bp-md: 800px;
+	--s: 8px;
+	--s-1: var(--s);
+	--s-2: calc(var(--s) * 2);
+	--s-3: calc(var(--s) * 3);
+	--s-4: calc(var(--s) * 4);
+	--t-l-size: 2rem;
+	--t-m-size: 1.5rem;
+	--t-s-size: 1rem;
+
+	--f-badass: "Arbutus", serif;
+}
+
+.f-badass {
+	font-family: var(--f-badass);
+}

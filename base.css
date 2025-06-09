@@ -1,0 +1,92 @@
+body {
+	background-color: var(--p-background);
+	color: var(--p-text);
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.header {
+	display: flex;
+	justify-content: center;
+	max-width: 100%;
+	padding-left: var(--s-4);
+	padding-right: var(--s-4);
+}
+
+.header__image {
+	max-width: 100%;
+}
+
+.counters {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	max-width: var(--bp-md);
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--s-4);
+}
+
+.counter-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.counter {
+	font-size: var(--t-l-size);
+	font-weight: bold;
+}
+
+.increment {
+	background-color: var(--p-primary);
+	color: var(--p-on-primary);
+	border: var(--p-secondary);
+	border-radius: var(--s-1);
+	padding: var(--s-2) var(--s-3);
+	cursor: pointer;
+	margin-top: var(--s-2);
+
+	transition: background-color 0.1s ease;
+}
+
+.increment:hover {
+	background-color: var(--p-primary-dark);
+}
+
+.increment:active {
+	background-color: var(--p-primary-darker);
+}
+
+.badass__img {
+	height: 3em;
+	margin-top: -1.8em;
+	margin-bottom: -0.7em;
+	margin-left: -0.5em;
+	margin-right: -0.5em;
+}
+
+.badass__increment {
+	line-height: 2;
+}
+
+@keyframes emoji-float {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+
+	100% {
+		transform: translateY(-2rem);
+		opacity: 0;
+	}
+}
+
+.emoji {
+	font-size: 2rem;
+	pointer-events: none;
+	position: fixed;
+	left: calc(var(--left) - 0.5em);
+	top: calc(var(--top) - 0.5em);
+	animation: emoji-float 0.5s ease-out forwards;
+}

@@ -10,8 +10,21 @@
 </head>
 
 <body>
-	<button data-counter="badass" class="increment">OLIVIA DID SOMETHING BADASS</button>
-	<span data-counter="badass" class="counter">...</span>
+	<header class="header">
+		<img src="./olivia-counter.gif" alt="Olivia Counter" class="header__image">
+	</header>
+	<main class="counters">
+		<section class="counter-container badass">
+			<button data-counter="badass" class="badass__increment increment bold f-badass">OLIVIA DID SOMETHING <img
+					src="./badass.gif" alt="badass" class="f-badass badass__img" />!!!!</button>
+			<span data-counter="badass" class="badass__counter counter f-badass">...</span>
+		</section>
+	</main>
+	<div class="emoji-container">
+		<template class="emoji-template">
+			<span class="emoji"></span>
+		</template>
+	</div>
 </body>
 
 </html>

@@ -95,3 +95,39 @@ document.querySelectorAll(".increment")
 			});
 		}
 	);
+
+const emojiMap = {
+	"badass": [
+		"\u{1F525}", // fire
+		"\u{1F528}", // hammer
+		"\u{1F60E}", // sunglasses
+		"\u{1F4AA}", // flexed biceps
+	]
+}
+
+const emojiContainer = document.querySelector(".emoji-container");
+/** @type {HTMLTemplateElement} */
+const emojiTemplate = document.querySelector(".emoji-template");
+const emojiRandomOffset = 25;
+// spawns emojis on click
+document.querySelectorAll(".increment")
+	.forEach((/** @type{HTMLElement} */ el) => {
+		const counterName = el.dataset.counter;
+		const emojis = emojiMap[counterName] || ["\u2764"]; // default to heart emoji if not found
+		el.addEventListener("click", (ev) => {
+			const emojiFragment = emojiTemplate.content.cloneNode(true);
+			/** @type {HTMLSpanElement} */
+			const emoji = emojiFragment.querySelector(".emoji");
+			emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+			const left = ev.clientX + (Math.random() - 0.5) * emojiRandomOffset;
+			const top = ev.clientY + (Math.random() - 0.5) * emojiRandomOffset;
+			emoji.style.setProperty("--left", `${left}px`);
+			emoji.style.setProperty("--top", `${top}px`);
+			emojiContainer.appendChild(emojiFragment);
+
+			emoji.addEventListener("animationend", () => {
+				emoji.remove();
+			});
+		});
+	})
