@@ -102,6 +102,7 @@ const emojiMap = {
 		"\u{1F528}", // hammer
 		"\u{1F60E}", // sunglasses
 		"\u{1F4AA}", // flexed biceps
+		"\u{1F4AF}", // hundred points
 	]
 }
 
