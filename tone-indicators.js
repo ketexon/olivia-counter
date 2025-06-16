@@ -160,7 +160,9 @@ const toneIndicators = [
 ];
 
 export function getTodaysToneIndicator() {
-	const today = Date.now() / (1000 * 60 * 60 * 24);
-	const idx = Math.floor(today) % toneIndicators.length;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Normalize to start of the day
+    const daysSinceEpoch = Math.floor((today - new Date(1970, 0, 1)) / (1000 * 60 * 60 * 24));
+	const idx = daysSinceEpoch % toneIndicators.length;
 	return toneIndicators[idx];
 }
