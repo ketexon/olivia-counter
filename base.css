@@ -7,15 +7,66 @@ body {
 }
 
 .header {
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
 	max-width: 100%;
 	padding-left: var(--s-4);
 	padding-right: var(--s-4);
+	padding-top: var(--s-2);
+	padding-bottom: var(--s-2);
+	gap: var(--s-4);
 }
 
 .header__image {
 	max-width: 100%;
+	grid-column-start: 2;
+	align-self: center;
+}
+
+@keyframes notification-hover {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(10deg);
+	}
+
+	100% {
+		transform: rotate(-10deg);
+	}
+}
+
+.header__notification-button {
+	background: var(--p-primary);
+	height: 2em;
+	width: 2em;
+	border-radius: 50%;
+	flex-shrink: 0;
+	border: none;
+	cursor: pointer;
+	align-self: center;
+	font-size: var(--t-l-size);
+	color: var(--p-on-primary);
+
+	&:hover {
+		animation: notification-hover 0.5s ease-in-out infinite alternate;
+	}
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 1;
+
+	transition: background-color 0.1s ease, font-variation-settings 0.1s ease;
+
+	&.header__notification-button--active {
+		font-variation-settings:
+			'FILL' 1,
+			'wght' 400,
+			'GRAD' 0,
+			'opsz' 24;
+	}
 }
 
 .cards {
@@ -48,23 +99,6 @@ body {
 .counter__increment-button {
 	align-self: stretch;
 	flex-grow: 1;
-
-	background-color: var(--p-primary);
-	color: var(--p-on-primary);
-	border: var(--p-secondary);
-	border-radius: var(--s-1);
-	padding: var(--s-2) var(--s-3);
-	cursor: pointer;
-	font-size: var(--t-m-size);
-
-	transition: background-color 0.1s ease;
-
-	&:hover {
-		background-color: var(--p-primary-dark);
-	}
-	&:active {
-		background-color: var(--p-primary-darker);
-	}
 }
 
 .badass__img {

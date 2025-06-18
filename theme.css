@@ -22,6 +22,12 @@
 	--t-m-size: 1.25rem;
 	--t-s-size: 1rem;
 
+	@media (width < 600px) {
+		--t-l-size: 1.25rem;
+		--t-m-size: 1.125rem;
+		--t-s-size: 1rem;
+	}
+
 	--f-badass: "Arbutus", serif;
 	--f-bust: "Corinthia", cursive;
 }

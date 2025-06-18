@@ -1,5 +1,7 @@
-@layer theme, base, util;
+@layer theme, components, base, util;
 
 @import url("./theme.css") layer(theme);
+@import url("./emoji.css") layer(theme);
+@import url("./components.css") layer(components);
 @import url("./base.css") layer(base);
 @import url("./util.css") layer(util);
