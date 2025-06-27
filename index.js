@@ -1,7 +1,7 @@
 import { cachedCounts, getCounts, incrementCount } from "./counts.js";
 import { spawnEmoji } from "./emoji.js";
 import { getTodaysToneIndicator } from "./tone-indicators.js";
-import "./notifications.js";
+import "./dates.js";
 
 document.querySelectorAll(".counter")
 	.forEach(

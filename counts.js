@@ -1,5 +1,3 @@
-import { sendMessage } from "./notifications.js";
-
 import { callApi, table } from "./api.js";
 
 const cachedCountsKey = "cached_counts";
@@ -53,8 +51,4 @@ export async function incrementCount(name) {
 	});
 	const counts = await getCounts();
 	cacheCounts(counts);
-	sendMessage({
-		type: "countsChanged",
-		counts,
-	});
 }
