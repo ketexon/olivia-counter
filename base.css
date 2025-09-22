@@ -91,6 +91,10 @@ body {
 	border-radius: var(--s-1);
 }
 
+.card__body.card__body--padded {
+	padding-bottom: var(--s-2);
+}
+
 .counter__text {
 	font-size: var(--t-l-size);
 	font-weight: bold;
